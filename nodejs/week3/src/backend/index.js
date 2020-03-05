@@ -5,7 +5,7 @@ const path = require("path");
 
 const mealsRouter = require("./api/meals");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 // For week4 no need to look into this!
 // Serve the built client html
