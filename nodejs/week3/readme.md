@@ -54,7 +54,7 @@ The environment variables are then used in node using `process.env.DB_HOST`, you
 To install run `npm install`
 
 ## 🎈 Usage <a name="usage"></a>
-To run `npm start`
+To run `npm run dev`
 
 The api can now be found on `http://localhost:5000/api/` an example is `http://localhost:5000/api/meals`
 
