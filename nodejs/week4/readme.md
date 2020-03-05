@@ -43,15 +43,12 @@ Here are the steps to do that:
 2. Clone that repository down locally. 
 3. Copy the code for the template from the this folder into the newly created repo. 
 4. Now copy last weeks `server` folder into the new repo in the `src` folder. You will now have a `server` folder and a `client` folder in the `src` folder.
-5. Uncomment the lines that is for week4!
-6. Add, commit and push the changes to your github.
-7. In the `hyf-homework/node/week4` just add a text file with the link to the newly created repo.
-8. Thats it 🎉
+5. Add, commit and push the changes to your github.
+6. In the `hyf-homework/node/week4` just add a text file with the link to the newly created repo.
+7. Thats it 🎉
 
 ### Access server api
 To access the server api, use `localhost:3000/api`
-
-The traffic is being redirected (proxied) from `localhiost:5000` where the server is running to `localhost:3000/api`. You can see that in the `webpack.config.js` file line 41. 
 
 ### Environment variables
 All sensitive data like fx passwords and usernames, we dont want to add to git! This problem we solve by having environment variables. Environment variables are not committed to git and have a key value structure. 
