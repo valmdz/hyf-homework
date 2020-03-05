@@ -68,6 +68,8 @@ To install run `npm install`
 ## 🎈 Usage <a name="usage"></a>
 To run `npm run dev`
 
+Now go to http://localhost:3000/ to see the website
+
 ## 🚀 Deployment <a name = "deployment"></a>
 Set Heroku with automated builds to the master branch.  push your code to the `master` branch. 
 
