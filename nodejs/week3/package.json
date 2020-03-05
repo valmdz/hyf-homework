@@ -6,7 +6,8 @@
     "node": "8.11.1"
   },
   "scripts": {
-    "start": "npm run server",
+    "dev": "npm run server",
+    "start": "node ./src/backend/index.js",
     "server": "nodemon ./src/backend/index.js"
   },
   "author": "Benjamin Hughes",
