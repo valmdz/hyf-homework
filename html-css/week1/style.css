@@ -1,0 +1,112 @@
+@media (max-width: 790px){
+  main{
+    flex-direction:column;
+  }
+}
+
+body{
+  /*font-family: 'Roboto Mono', monospace;*/
+  /*font-family: 'Nanum Gothic', sans-serif;*/
+  font-family: 'Noto Serif JP', serif;
+  margin: 5% 20% 5% 20%;
+}
+
+/*Text*/
+
+h1{
+  font-size: 23px;
+}
+
+h2{
+  font-size: 20px;
+}
+
+em{
+  font-style: italic;
+}
+
+/*Image*/
+
+img{
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+/*Overall structure*/
+
+main {
+  display: flex;
+}
+
+aside{ 
+  float: left;
+  height: 100%;
+  flex-direction: column;
+  line-height: 1.4;
+  margin-right: 100px;
+}
+
+footer{
+  font-size: 11px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+section{
+  max-width: 100%;
+}
+
+/*Lists*/
+
+section ul{
+  margin-block-start: 10px;
+}
+
+section li{
+  list-style-type: circle;
+}
+
+aside li{
+  list-style-type:none;
+}
+
+aside ul{
+  padding-inline-start: 0px;
+  line-height:1.7;
+}
+
+/*Paddings and margins*/
+
+aside h3{
+  padding-top: 10px;
+}
+
+.history-categories {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.history-categories h3{
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+
+h4{
+  margin-block-end: 5px;
+}
+
+/*Links*/
+
+a:link{
+  text-decoration: none;
+  color:#57A0BD;
+}
+
+a:visited{
+  text-decoration: none;
+  color:#5771BD;
+}
+
+a:hover{
+  text-decoration: line-through;
+}
