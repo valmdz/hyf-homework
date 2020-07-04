@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your custom tailor</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <p class="left">Logo</p>
+    <p class="right">Navigation</p>
+  </header>
+
+  <main>
+    <section class="explanation-info">
+      <h1>Sign up for yourcustomtailor.com</h1>
+      <p>We can't wait to help you improve your lifestyle and gain attention from people around you!</p>
+      <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking
+        the best offers that match your preferences and style. Every week we will send you a
+        hand-picked selection- we just need to know a few details about you first...</p>
+    </section>
+
+    <h2>Step 1/4 - tell us who you are?</h2>
+
+    <section>
+      <p class="bold-text">Progress</p>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </section>
+
+    <p>We will probably need to stay in touch somehow. Let us know how we can reach you?</p>
+
+
+    <form onsubmit="location.href = 'step2.html'; arguments[0].preventDefault();" x-action="/stored-info">
+      <div>
+        <label for="firstName">First name*</label>
+        <input type="text" id="firstName1" name="first_name" required value="filled" >
+        <div>
+          <label for="lastName">Last name*</label>
+          <input type="text" id="lastName1" name="last_name" value="filled" required>
+        </div>
+      </div>
+
+      <div>
+        <label for="country">Country*</label>
+        <select id="country1" name="country" required>
+          <option value="Denmark">Denmark</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Norway">Norway</option>
+          <option value="Finland">Finland</option>
+          <option value="Germany">Germany</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="streetAddress">Street Address*</label>
+        <input type="text" id="streetAddress1" name="street_address" value="filled" required>
+        <div>
+          <label for="postCode">Post code*</label>
+          <input type="number" id="postCode1" name="post_code" value="0000" required min="1000" max="9999">
+        </div>
+      </div>
+
+      <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+
+      <div class="shippping">
+        <label for="separateShipping">Shipping address</label> 
+        <input type="checkbox" id="separateShipping" name="separate_shipping" checked>
+      </div>
+
+      <p class="bold-text">Shipping address</p>
+
+      <div>
+       <label for="firstName">First name*</label>
+       <input type="text" id="firstName" name="first_name" required>
+       <div>
+         <label for="lastName">Last name*</label>
+         <input type="text" id="lastName" name="last_name" required>
+       </div>
+     </div>
+
+     <div>
+       <label for="country">Country*</label>
+       <select id="country" name="country" required>
+         <option value="Denmark">Denmark</option>
+         <option value="Sweden">Sweden</option>
+         <option value="Norway">Norway</option>
+         <option value="Finland">Finland</option>
+         <option value="Germany">Germany</option>
+       </select>
+     </div>
+
+     <div>
+       <label for="streetAddress">Street Address*</label>
+       <input type="text" id="streetAddress" name="street_address" required>
+       <div>
+         <label for="postCode">Post code*</label>
+         <input type="number" id="postCode" name="post_code" required min="1000" max="9999">
+       </div>
+     </div>
+
+     <div class="profile-descr">
+       <label for="profileDescr">Profile description</label>
+       <textarea id="profileDescr" name="profile-descr" maxlength="500"></textarea>
+       <!-- <input type="text" id="profileDescr" name="profile_description" > -->
+       <p class="small-text">Please provide a short description of yourself to be displayed on our social community
+         pages.</p>
+     </div>
+
+      <button type="submit">Next step</button>
+
+    </form>
+
+  </main>
+</body>
+
+</html>

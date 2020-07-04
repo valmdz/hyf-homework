@@ -1,0 +1,165 @@
+
+html{
+  margin-bottom: 2%;
+}
+
+body{
+  margin: 1% 2%;
+  font-family: sans-serif;
+  line-height: 1.2;
+}
+
+header>*{
+  display: flex;
+  flex-direction: row;
+}
+
+header{
+  display: block;
+}
+
+.left{
+  border: solid black 1px;
+  background-color: lightgrey;
+  padding: 3%;
+  max-width: fit-content;
+}
+
+.right{
+  position: absolute;
+  top: 0;
+  right: 2%;
+  border: solid black 1px;
+  background-color: lightgrey;
+  margin-right: 0;
+  padding: 3% 15%;
+  max-width: fit-content;
+}
+
+.explanation-info{
+  width: 75%;
+}
+
+.bold-text, form label{
+  font-weight: bold;
+}
+
+.progress-bar{
+  height: 30px;
+  max-width: 100%;
+  border: solid black 1px;
+}
+
+.progress{
+  background-color: lightgrey;
+  height: 30px;
+  max-width: 10%;
+}
+
+.progress2{
+  background-color: lightgrey;
+  height: 30px;
+  max-width: 30%;
+}
+
+.progress3{
+  background-color: lightgrey;
+  height: 30px;
+  max-width: 60%;
+}
+
+.progress4{
+  background-color: lightgrey;
+  height: 30px;
+  max-width: 90%;
+}
+
+.small-text{
+  font-style: italic;
+  font-size: xx-small;
+  width: 120px;
+  padding-left: 2%;
+
+}
+
+form >*{
+  padding-top: 1em;
+}
+
+form p{
+  padding-top: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 160px;
+  text-align: right;
+}
+
+form div div{
+  display: inline-block;
+}
+
+input:nth-child(n+3):nth-last-child(n+3){
+  width: 150px;
+  box-sizing: border-box;
+}
+
+/* .profile-descr input{
+  margin-left: 3px;
+  width: 480px;
+  position: absolute;
+  height: 100px;
+} */
+
+.profile-descr textarea{
+  margin-left: 3px;
+  width: 496px;
+  position: absolute;
+  height: 100px;
+}
+
+button{
+  padding: 2% 7%;
+  float:right;
+  /* bottom: 2em; */
+  margin-top: 20px;
+}
+
+a{
+  float:right;  
+  /* bottom: 2em; */
+  margin-top: 20px;
+}
+
+.style-match{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+}
+
+svg{
+  max-width: 70%;
+}
+
+@media (max-width: 700px) {
+  body {
+      color: red;
+  }
+
+  form div div{
+    display: block;
+    margin-top: 1em;
+  }
+
+  .profile-descr input{
+    max-width: 40%;
+  }
+
+  .style-match{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+}
+
