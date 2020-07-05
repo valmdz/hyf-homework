@@ -1,3 +1,4 @@
+black
 red
 blue
 green
