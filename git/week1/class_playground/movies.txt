@@ -1,7 +1,4 @@
 The Shawshank Redemption 
 A cloackwork orange
-<<<<<<< HEAD
 12 Angry Men 
-=======
 The Godfather
->>>>>>> 194d7632e7cfa9b5980e5bbbacc6e0f38244cd26
