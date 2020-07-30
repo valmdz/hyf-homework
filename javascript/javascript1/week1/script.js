@@ -28,15 +28,18 @@ ageOfDog(2004, 2024, false);
 
 //Housey pricey (A house price estimator)
 
-const priceOfHouse = (widthOfHouse, depthOfHouse, heightOfHouse, gardenSizeInM2, nameOfFriend) => {
+const priceOfHouse = (widthOfHouse, depthOfHouse, heightOfHouse, gardenSizeInM2, nameOfFriend, valueOfHouse) => {
   const volumeInMeters = widthOfHouse * depthOfHouse * heightOfHouse;
   const housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+  const differenceHousePrice = housePrice - valueOfHouse;
   
   console.log(`The price of ${nameOfFriend}'s house is ${housePrice}`);
+  console.log(`${nameOfFriend} will be paying a difference of ${differenceHousePrice} on the value of the house`);
 }
 
-priceOfHouse(8,10,10,100,"Peter");
-priceOfHouse(5,11,8,70,"Julia");
+priceOfHouse(8,10,10,100,"Peter",2500000);
+priceOfHouse(5,11,8,70,"Julia", 1000000);
+
 
 
 //Ez Namey (Startup name generator) Optional
