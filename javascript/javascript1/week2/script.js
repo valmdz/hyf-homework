@@ -1,26 +1,19 @@
 // 1. Flight booking
 
-// const getFullName = (firstname, surname, useFormalName) => { **Optional syntax
 function getFullName(firstname, surname, useFormalName) {
   const title = useFormalName ? 'Lord ' : '';
   return `${title}${firstname} ${surname}`;
-  /* Alternate solution
-  if (useFormalName){
-    return `Lord ${firstname} ${surname}`;
-  }
-  return `${firstname} ${surname}`;
-  */
 }
 
-let fullname1 = getFullName('Frederik', 'Hanghøj', true);
-let fullname2 = getFullName('Valentina','Méndez', false);
+const fullname1 = getFullName('Frederik', 'Hanghøj', true);
+const fullname2 = getFullName('Valentina','Méndez', false);
 
 console.log(fullname1);
 console.log(fullname2);
 
 // 2.Event application
 
-const weekdays = {0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4:'Thursday', 5: 'Friday', 6: 'Saturday'}; // Object
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 let todayDate = new Date(); //Gets current day - today
 let todayNumber = todayDate.getDay(); //Gets the number of the weekday of today where 0 is sunday
@@ -28,9 +21,9 @@ const todayName = weekdays[todayNumber];
 console.log(`Today is ${todayName}`);
 
 function daysToEvent (daysTo){
-  let someNumber = todayNumber + daysTo;
+  let sumOfNumbers = todayNumber + daysTo;
 
-  let weekdayNumber = someNumber % 7;
+  let weekdayNumber = sumOfNumbers % 7;
   const futureDay = weekdays[weekdayNumber];
   console.log(`The event is happening on a ${futureDay}`);
 }
@@ -50,8 +43,7 @@ daysToEvent(365);
 
 // 3. Weather wear
 
-// const returnOutfit  = (temperature) =>{}  **Optional syntax
-function returnOutfit (temperature) {
+function getClothes (temperature) {
   if (temperature < 7){
    return 'warmest jacket and thermal clothes';
   } else if (temperature < 13){
@@ -63,30 +55,34 @@ function returnOutfit (temperature) {
   }
 }
 
-console.log(returnOutfit(7));
+console.log(getClothes(7));
 
 
 // 4. student manager
 
 const class07Students = [];
 
-//const addStudentToClass = (studentName) => { **Optional syntax
 function addStudentToClass(studentName) {
-  if (class07Students.includes(studentName)){
+  if (class07Students.includes(studentName)) {
     console.log(`Student ${studentName} is already in the class`); 
     return;
-  } if (studentName === '' || studentName === ' '){
+  }
+
+  if (studentName === '' || studentName === ' ') {
     console.log('Please add a student name to the class'); 
     return;
-  } 
-  if (class07Students.length < 6 || studentName === 'Queen'){
-    class07Students.push(studentName); 
-  } else {
+  }
+
+  if (class07Students.length >= 6 && studentName !== 'Queen') {
     console.log('Cannot add more students to class 07');
-  }  
+    return;
+  }
+
+  class07Students.push(studentName);
   console.log(class07Students);
 }
 
+addStudentToClass('Valentina');
 addStudentToClass('Valentina');
 addStudentToClass('Ember');
 addStudentToClass('Karolina');
@@ -111,12 +107,10 @@ const amountToSpend = Math.random() * 100;
 
 const prices = {"Sweet": .5, "Chocolate": .7, "Toffee": 1.1, "Chewing gum": .03}; 
 
-// function price (candyType){
 const price = (candyType) => {
   return prices[candyType];
 }
 
-// function addCandy(candyType, weight) {
 const addCandy = (candyType, weight) => {
   const kiloPrice = price(candyType);
 
@@ -142,12 +136,9 @@ let sumSoFar = 0;
 for (let i = 0; i < boughtCandyPrices.length; i++) {
   const currentPrice = boughtCandyPrices[i][1];
   sumSoFar = currentPrice + sumSoFar;
-  //console.log({i, currentPrice, sumSoFar});
 }
   
 console.log({sumSoFar, amountToSpend});
 
 const canBuyMoreCandy = (sumSoFar <= amountToSpend) ? 'You can buy more, so please do!' : 'Enough candy for you!';
 console.log(canBuyMoreCandy);
-
-//END
