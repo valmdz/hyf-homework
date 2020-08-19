@@ -1,7 +1,8 @@
 // 1. Item array removal
 let names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
 const nameToRemove = 'Ahmad';
-
+/* 
+//My implementation of array filter
 const myFilter = (names, nameToRemove) => {
   let newList = [];
   for (let i = 0; i < names.length; i++){
@@ -13,6 +14,10 @@ const myFilter = (names, nameToRemove) => {
 }
 
 names = myFilter(names, nameToRemove);
+*/
+
+// Implementation using Array.prototype.filter()
+names = names.filter(word => word !== nameToRemove);
 
 console.log(names); // ['Peter', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala']
 
@@ -29,7 +34,7 @@ const travelTime = ({speed, destinationDistance}) => {
   const hours = Math.floor(calcTime);
   const minutes = Math.floor((calcTime % 1)*60);
   return `Travel: ${hours} hours and ${minutes} minutes`;
-}
+};
 
 console.log(travelTime(travelInformation));
 
@@ -55,7 +60,7 @@ const seriesDurations = [
     hours: 12,
     minutes: 0,
   }
-]
+];
 
 const days = 365;
 const hours = days*24;
@@ -70,11 +75,9 @@ for (let i = 0; i < seriesDurations.length; i++){
   console.log(`${seriesDurations[i].title} took ${yearsPercentage.toPrecision(2)}% of my life`)
   totalPercentage = yearsPercentage;
   totalPercentage += totalPercentage;
-}
+};
 
 console.log(`In total that is ${totalPercentage.toPrecision(2)}% of my life`);
-
-
 
 
 // 4. NOnoN0nOYes (Note taking app)
@@ -96,10 +99,10 @@ function getNote(id) {
     const note = notes[i];
     if (note.id === id) {
       return note;
-    }
-  }
-  console.log('There is an error');
-}
+    };
+  };
+  return('There is an error');
+};
 
 
 //Log out notes
@@ -107,11 +110,12 @@ function getNote(id) {
 const logOutNotesFormatted = () => {
   for (const note of notes){
     console.log(`The note with id ${note.id}, has the following note text: ${note.content}`);
-  }
-}
+  };
+};
 
-saveNote('Get milk', 1);
-saveNote('Get coffee', 2);
+saveNote('Pick up groceries', 1);
+saveNote('Get milk', 2);
+saveNote('Get coffee', 3);
 
 console.log(notes);
 
@@ -138,14 +142,16 @@ let totalTime = 0;
 const limitTime = 100;
 
 const showStatus = () => {
+  
   for(let i = 0; i < activities.length; i++){
     let sumOf = activities[i].duration;
     totalTime += sumOf;
-  }
+  };
   if (totalTime >= limitTime){
-    console.log('You have reached your limit, no more smartphoning for you!');
-  }
-  return `You added ${[activities.length]} activities. They amount for ${totalTime} minutes of usage`;
+    return ('You have reached your limit, no more smartphoning for you!');
+  } else {
+    return `You added ${[activities.length]} activities. They amount for ${totalTime} minutes of usage`;
+  };
 };
 
 console.log(showStatus());
