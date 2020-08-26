@@ -21,16 +21,33 @@ tagResult.style.fontWeight = 'bold';
 tagResult.style.fontSize = '18px';
 inputText.appendChild(tagResult);
 
+const newButton = document.createElement('button');
+newButton.style.marginLeft = '1%';
+newButton.style.border = '0';
+newButton.style.padding = '0.5%';
+newButton.style.backgroundColor = '#82B8D9';
+newButton.innerHTML = 'Try again';
+
+const pick = (words) => words[Math.floor(Math.random() * words.length)];
+
 const buttonSubmit = () => {
   const name = document.querySelector('input').value;
-  const animals = ['bear', 'fox', 'wolf', 'mantis', 'hummingbird', 'coyote', 'dragonfly', 'leopard', 'linx', 'wolverine']
-  const adjectives = ['devious', 'sneaky', 'cunning', 'plucky', 'spirited', 'scintillating', 'sagacious', 'nimble', 'dauntless', 'true-hearted'];
-  const randomize = `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${animals[Math.floor(Math.random() * animals.length)]}`;
-  document.querySelector('p').innerHTML = (`${name} - The ${randomize}`);
-  button.innerHTML = 'Try again';
+  const randomGenerate = () => {
+    const animals = ['bear', 'fox', 'wolf', 'mantis', 'hummingbird', 'coyote', 'dragonfly', 'leopard', 'linx', 'wolverine'];
+    const adjectives = ['devious', 'sneaky', 'cunning', 'plucky', 'spirited', 'scintillating', 'sagacious', 'nimble', 'dauntless', 'true-hearted'];
+    document.querySelector('p').innerHTML = (`${name} - The ${pick(adjectives)} ${pick(animals)}`);
+  }
+  
+  randomGenerate();
+  button.disabled = true;
+  inputText.appendChild(newButton);  
+  
   if (name.trim() === '') {
     document.querySelector('p').innerHTML = 'No name entered';
+    button.disabled = false;
+    inputText.removeChild(newButton);  
   }
 };
 
 button.addEventListener('click', buttonSubmit)
+newButton.addEventListener('click', buttonSubmit)
