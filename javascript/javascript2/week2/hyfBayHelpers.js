@@ -1,6 +1,6 @@
 /* DONT MODIFY ANY OF THIS CODE!!!*/
 
-window.getAvailableProducts = function() {
+window.getAvailableProducts = function () {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -23,7 +23,7 @@ window.getAvailableProducts = function() {
       "Wet",
       "Green",
       "Sloppy",
-      "Dirty"
+      "Dirty",
     ];
     const productNames = [
       "Carrot",
@@ -40,7 +40,7 @@ window.getAvailableProducts = function() {
       "Toothbrush",
       "Computer",
       "Nokia",
-      "Cologne"
+      "Cologne",
     ];
 
     let chosenProductName = getRandomItem(productNames);
@@ -54,6 +54,30 @@ window.getAvailableProducts = function() {
     return chosenProductName;
   }
 
+  /* DONT MODIFY ANY OF THIS CODE!!!*/
+  function getRandomCountries() {
+    const availableCountries = [
+      "Denmark",
+      "Sweden",
+      "Norway",
+      "Germany",
+      "Iceland",
+      "England",
+    ];
+    const numberOfCountries = getRandomInt(1, 3);
+
+    const randomCountries = [];
+    while (randomCountries.length < numberOfCountries) {
+      const randomIndex = getRandomInt(0, availableCountries.length - 1);
+      const randomCountry = availableCountries[randomIndex];
+      if (!randomCountries.includes(randomCountry)) {
+        randomCountries.push(randomCountry);
+      }
+    }
+
+    return randomCountries;
+  }
+
   const numberOfAvailableProducts = getRandomInt(0, 30);
   const availableProducts = Array.apply(
     null,
@@ -64,7 +88,8 @@ window.getAvailableProducts = function() {
       id: `${name}${getRandomInt(0, 100000)}`,
       name,
       price: getRandomInt(0, 10000),
-      rating: getRandomInt(1, 10)
+      rating: getRandomInt(1, 10),
+      shipsTo: getRandomCountries(),
     };
   });
 

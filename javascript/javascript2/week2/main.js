@@ -7,8 +7,12 @@ const products = getAvailableProducts();
 const renderProducts = (products) => {
   ul.innerHTML = "";
   products.forEach((product) => {
+    const shipsToHTML = product.shipsTo
+      .map((country) => `<li>${country}</li>`)
+      .join("");
+
     const li = document.createElement("li");
-    li.innerHTML = `<h2>${product.name}</h2><span>price: ${product.price}</span><br><span>Rating: ${product.rating}</span>`;
+    li.innerHTML = `<h2>${product.name}</h2><div>price: ${product.price}</div><div>Rating: ${product.rating}</div><ul>${shipsToHTML}</ul>`;
     ul.appendChild(li);
   });
 };
