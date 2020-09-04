@@ -21,8 +21,8 @@ const findLetters = (danishLetter, sentence) => {
   for (const value of sentence){
     if(danishLetter.includes(value)){
       resultingCount.total++;
-      const lookUp = resultingCount[value] || 0;
-      resultingCount[value] = lookUp + 1;
+      const lettersCount = resultingCount[value] || 0;
+      resultingCount[value] = lettersCount + 1;
     }
   };
   
