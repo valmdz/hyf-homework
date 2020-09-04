@@ -7,7 +7,7 @@ const getReply = (command) => {
   // Greet with name
   if (command.match('Hello my name is ')){
     name = (command.slice(17));
-    if (name === '' || name === ' '){
+    if (name.trim() === ''){
       return (`Please enter a name`);
     };
     return (`Nice to meet you ${name}`);
