@@ -20,25 +20,25 @@ const startCount = () => {
   resultL.hidden = true;
 };
 
+const displayWinner = () => {
+  if (countS > countL) {
+    resultS.hidden = false;
+    return "S";
+  }
+  if (countL > countS) {
+    resultL.hidden = false;
+    return "L";
+  }
+  if (countL === countS) {
+    resultL.hidden = false;
+    resultS.hidden = false;
+    return "tie";
+  }
+};
+
 const startGame = () => {
   console.log(timeLimit.value);
-  const displayWinner = () => {
-    if (countS > countL) {
-      resultS.hidden = false;
-      return "S";
-    }
-    if (countL > countS) {
-      resultL.hidden = false;
-      return "L";
-    }
-    if (countL === countS) {
-      resultL.hidden = false;
-      resultS.hidden = false;
-      return "tie";
-    }
-  };
   setTimeout(displayWinner, timeLimit.value * 1000);
-
   startCount();
 };
 

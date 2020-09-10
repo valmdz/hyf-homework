@@ -1,5 +1,4 @@
 // Print delayed messages
-
 setTimeout(() => {
   console.log("Called after 2.5 seconds");
 }, 2500);
@@ -20,7 +19,6 @@ const buttonDelay = document.getElementById("delay-button");
 buttonDelay.addEventListener("click", callFuction);
 
 // Planet log
-
 const earthLogger = () => {
   console.log("Earth");
 };
@@ -50,16 +48,6 @@ function getLocation() {
 
 function showPosition(position) {
   printLocation.innerHTML = `This is the latitude: ${position.coords.latitude} <div> This is the longitude: ${position.coords.longitude}`;
-
-  // const map;
-
-  // function initMap() {
-  //   map = new google.maps.Map(document.getElementById("map"), {
-  //     center: { lat: position.coords.latitude, lng: position.coords.longitude },
-  //     zoom: 8
-  //   });
-  // }
-  // initMap();
 }
 
 buttonLocation.addEventListener("click", getLocation);
@@ -153,7 +141,11 @@ const thank = () => console.log("No need to thank me, thanks to you!");
 
 const mkLog = (s) => () => console.log(s);
 const greeting1 = mkLog("Oh! Hello");
-const FF = ["Oh! Hello", "Have a lovely day, mister", "No need to thank me, thanks to you!"].map(mkLog);
+const FF = [
+  "Oh! Hello",
+  "Have a lovely day, mister",
+  "No need to thank me, thanks to you!",
+].map(mkLog);
 
 const Functions = [greeting, message, thank];
 
