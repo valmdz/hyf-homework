@@ -26,7 +26,7 @@ const displayWeather = (evt) => {
         $icons.appendChild($icon);
       }
 
-      const displayProp = (selector, txt) => {
+      const displayProp = ([selector, txt]) => {
         const property = document.querySelector(selector);
         property.innerHTML = txt;
       };
@@ -42,8 +42,9 @@ const displayWeather = (evt) => {
         [".cloudiness", data.clouds.all],
         [".sunrise", secondsInLocale(data.sys.sunrise)],
         [".sunset", secondsInLocale(data.sys.sunset)],
-      ].forEach(([selector, txt]) => displayProp(selector, txt));
+      ].forEach(displayProp);
     });
+    document.querySelector('footer').hidden = false;
 };
 
 document.querySelector("form").addEventListener("submit", displayWeather);
