@@ -1,17 +1,6 @@
-/* Works fine for mobile, adjust for larger screens */
-
-@media (min-width: 768px) {
-  h1 {
-    margin-top: 15%;
-  }
-  div.search {
-    padding-top: 5%;
-  }
-}
-
 body {
   text-align: center;
-  width: 95%;
+  width: 100%;
 }
 
 * {
@@ -19,16 +8,16 @@ body {
 }
 
 h1 {
-  margin-top: 15%;
+  margin-top: 3%;
   font-size: 3em;
   color: #2381A1;
   letter-spacing: 0.05em;
   font-family: 'Major Mono Display', monospace;
 }
 
-div.search {
+.search {
   display: inline-grid;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 
 button {
@@ -49,4 +38,13 @@ p {
   font-style: italic;
   font-weight: 500;
   letter-spacing: 0.05em;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #48484a;
+  color: white;
 }
