@@ -36,6 +36,7 @@ const displayWeather = (evt) => {
 
       [
         [".city-name", data.name],
+        [".country", data.sys.country],
         [".temperature", data.main.temp],
         [".wind-speed", data.wind.speed],
         [".cloudiness", data.clouds.all],
