@@ -1,0 +1,62 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ececec;
+  padding: 60px 15%;
+}
+
+* {
+  box-sizing: border-box;
+  color: #6d3232;
+}
+
+.pageHead {
+  text-align: center;
+  padding-bottom: 40px;
+  color: #450707;
+}
+
+h2 {
+  color: #b87474;
+  border-bottom: thin solid;
+}
+
+body, h1, h2 {
+  padding-top: 40px;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul ul {
+  display: flex;
+  padding-left: 20px;
+}
+
+ul ul li {
+  padding: 10px 20px 10px 0px;
+}
+
+li>div {
+  padding: 10px 0px;
+  padding-left: 20px;
+}
+
+div.filtersBar {
+  padding: 20px 0;
+}
+
+input {
+  margin: 10px 10px 10px 0;
+  border: 0px;
+  padding: 10px;
+}
+
+select {
+  margin: 10px 10px 10px 0;
+  border: 0px;
+  padding: 10px;
+}
