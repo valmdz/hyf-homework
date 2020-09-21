@@ -13,22 +13,23 @@
 
 <body>
  <h1>Weather <br> now</h1>
- <form class='search'>
-  <input placeholder='Enter a city'></input>
+ <form class="search">
+  <input placeholder="Enter a city"></input>
   <button type="submit">Get weather</button>
  </form>
- <div hidden class='weather-info'>
-  <div class='icons'></div>
-  <p>City: <span class="city-name"></span></p>
-  <p>Country: <span class="country"></span></p>
-  <p>Temperature: <span class="temperature"></span> °C</p>
-  <p>Wind speed: <span class="wind-speed"></span> m/s</p>
-  <p>Cloudiness: <span class="cloudiness"></span> %</p>
-  <p>Sunrise: <span class="sunrise"></span> *</p>
-  <p>Sunset: <span class="sunset"></span> *</p>
+ <div class="alerts"></div>
+ <div hidden class="weather-info">
+  <div class="icons"></div>
+  <p class="city-name"></p>
+  <p class="country"></p>
+  <p class="temperature"></p>
+  <p class="wind-speed"></p>
+  <p class="cloudiness"></p>
+  <p class="sunrise"></p>
+  <p class="sunset"></p>
  </div>
  <footer hidden>
-  <p>*All times are on your local time</p>
+  <p>* All times are given in your local time.</p>
  </footer>
 </body>
 
