@@ -1,36 +1,27 @@
-// Transalating one by one
-const redBox = document.querySelector(".marks li:nth-child(1)");
-const blueBox = document.querySelector(".marks li:nth-child(2)");
-const greenBox = document.querySelector(".marks li:nth-child(3)");
+const boxes = [1, 2, 3].map((n) => ({
+  source: document.querySelector(`.marks li:nth-child(${n})`),
+  target: document.querySelector(`.targets li:nth-child(${n})`),
+}));
 
-const redTarget = document.querySelector(".targets li:nth-child(1)");
-const blueTarget = document.querySelector(".targets li:nth-child(2)");
-const greenTarget = document.querySelector(".targets li:nth-child(3)");
+const moveToTargets = ({ source, target }) =>
+  moveElement(source, {
+    x: target.offsetLeft - source.offsetLeft,
+    y: target.offsetTop - source.offsetTop,
+  }).then(console.log(`${source} moved`));
 
 const translateOneByOne = async () => {
-  await moveElement(redBox, { x: redTarget.offsetLeft - redBox.offsetLeft, y: redTarget.offsetTop - redBox.offsetTop }).then(() => {
-    console.log("Red moved");
-  });
-  await moveElement(blueBox, { x: blueTarget.offsetLeft - blueBox.offsetLeft, y: blueTarget.offsetTop - blueBox.offsetTop }).then(() => {
-    console.log("Blue moved");
-  });
-  await moveElement(greenBox, { x: greenTarget.offsetLeft - greenBox.offsetLeft, y: greenTarget.offsetTop - greenBox.offsetTop}).then(() => {
-    console.log("Green moved");
-  });
+  for (const box of boxes) {
+    await moveToTargets(box);
+  }
 };
-
-//translateOneByOne();
 
 // Transalating all at once
-const translateAllAtOnce = () => {
-  moveElement(redBox,  { x: redTarget.offsetLeft - redBox.offsetLeft, y: redTarget.offsetTop - redBox.offsetTop }).then(() => {
-    console.log("Red moved");
-  });
-  moveElement(blueBox, { x: blueTarget.offsetLeft - blueBox.offsetLeft, y: blueTarget.offsetTop - blueBox.offsetTop }).then(() => {
-    console.log("Blue moved");
-  });
-  moveElement(greenBox, { x: greenTarget.offsetLeft - greenBox.offsetLeft, y: greenTarget.offsetTop - greenBox.offsetTop}).then(() => {
-    console.log("Green moved");
-  });
-};
- translateAllAtOnce();
+const translateAllAtOnce = () =>
+  Promise.all(
+    boxes.map((box) =>
+      moveToTargets(box).then(console.log(`${box.source} moved`))
+    )
+  );
+
+translateOneByOne();
+// translateAllAtOnce();

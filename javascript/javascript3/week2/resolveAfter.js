@@ -1,15 +1,3 @@
-console.log("all good");
-/*
-const f = () => {
-  console.log("hi");
-  return 2;
-};
-setTimeout(f, 1000);
-setTimeout(() => f(), 1000);
-setTimeout(f(), 1000);
-setTimeout(2, 1000);
-*/
-
 // Create a function that has one parameter: resolveAfter.
 //Calling this function will return a promise that resolves after the resolveAfter seconds has passed.
 const test = (resolveAfter) =>
@@ -52,17 +40,8 @@ const setTimeoutP = (ms) =>
 setTimeoutP(2000).then(console.log("setTimeOut"));
 
 // navigator.geolocation.getCurrentPosition into promise
-
 const positionPromise = () =>
-  new Promise((resolve) => {
-    const success = (pos) => {
-      resolve(pos);
-    };
-    navigator.geolocation.getCurrentPosition(success);
-  });
-// const positionPromise = () =>
-//   new Promise((resolve) => navigator.geolocation.getCurrentPosition(resolve));
-
+  new Promise((resolve) => navigator.geolocation.getCurrentPosition(resolve));
 
 console.log(positionPromise());
 positionPromise().then((pos) => {
@@ -71,25 +50,9 @@ positionPromise().then((pos) => {
   console.log(`longitude: ${crd.longitude}`);
   console.log(`Aprox ${crd.accuracy} mtrs`);
 });
-// positionPromise().then((pos) => {
-//   console.log(`latitude: ${pos.coords.latitude}`);
-//   console.log(`longitude: ${pos.coords.longitude}`);
-//   console.log(`Aprox ${pos.coords.accuracy} mtrs`);
-// });
-// positionPromise().then(({ coords }) => {
-//   console.log(`latitude: ${coords.latitude}`);
-//   console.log(`longitude: ${coords.longitude}`);
-//   console.log(`Aprox ${coords.accuracy} mtrs`);
-// });
-// positionPromise().then(({ coords: { latitude, longitude, accuracy } }) => {
-//   console.log(`latitude: ${latitude}`);
-//   console.log(`longitude: ${longitude}`);
-//   console.log(`Aprox ${accuracy} mtrs`);
-// });
 
 //Fetching and waiting
 //The 3 steps: Wait 3 seconds. After that, fetch some data from any api you like. Log out the data from the api
-
 const url = "http://api.open-notify.org/astros.json";
 
 //Do the 3 steps below using promises and .then.
@@ -115,4 +78,3 @@ const asyncAfterThree = async () => {
 };
 
 asyncAfterThree();
-

@@ -6,14 +6,12 @@ async function getMovies() {
     const data = await fetch(urlMovies);
     const movies = await data.json();
 
-    const badMovies = movies
-      .filter((movie) => movie.rating < 4)
-      .map((movies) => movies);
+    const badMovies = movies.filter((movie) => movie.rating < 4);
     console.log({ badMovies });
 
-    const badMoviesSince2000 = movies
-      .filter((movie) => movie.rating < 4 && movie.year >= 2000)
-      .map((movies) => movies);
+    const badMoviesSince2000 = movies.filter(
+      (movie) => movie.rating < 4 && movie.year >= 2000
+    );
     console.log({ badMoviesSince2000 });
   } catch (error) {
     console.log(error);
