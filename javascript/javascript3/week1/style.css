@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+  width: 100%;
+}
+
+* {
+  font-family: 'Inconsolata', monospace;
+}
+
+h1 {
+  margin-top: 3%;
+  font-size: 3em;
+  color: #2381A1;
+  letter-spacing: 0.05em;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.search {
+  display: inline-grid;
+  padding-top: 2%;
+}
+
+button {
+  font-size: 17px;
+  margin: 14%;
+  padding: 4% 0;
+  border: none;
+  box-shadow: 3px 3px #2381A1;
+  background: whitesmoke;
+}
+
+input {
+  padding: 7% 4%;
+  border: solid 1px lightgrey;
+}
+
+p {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #48484a;
+  color: white;
+}
