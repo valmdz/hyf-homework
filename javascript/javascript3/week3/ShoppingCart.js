@@ -34,11 +34,7 @@ class ShoppingCart {
   }
 
   getTotal() {
-    const pRed = this.products.reduce((a, { price }) => a + price, 0);
-
-    // const p = this.products.map((product) => product.price);
-    // const pRed = p.reduce((a, b) => a + b, 0);
-    return pRed;
+    return this.products.reduce((a, { price }) => a + price, 0);
   }
 
   async renderProducts() {
