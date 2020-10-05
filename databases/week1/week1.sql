@@ -18,7 +18,7 @@
 
 -- Get all the tasks, sorted with the most recently created first
  SELECT * FROM test.task 
- ORDER BY created;
+ ORDER BY created DESC;
 
 -- Get the single most recently created task
 SELECT * FROM test.task 
@@ -26,7 +26,7 @@ ORDER BY created DESC
 LIMIT 1;
 
 -- Get the title and due date of all tasks where the title or description contains database
-SELECT title, due_date, `description`
+SELECT title, due_date
 FROM test.task
 WHERE `description` LIKE '%database%' 
 OR title LIKE '%database%';
