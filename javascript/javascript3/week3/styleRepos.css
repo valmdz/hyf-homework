@@ -1,0 +1,40 @@
+body {
+  padding-top: 40px;
+  font-size: 1.1em;
+}
+
+.users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+li {
+  list-style: none;
+  line-height: 3em;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  padding: 0.5em;
+}
+
+.links {
+  font-size: 1.2em;
+  line-height: 5em;
+  text-decoration: underline;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: #5497AB;
+}
