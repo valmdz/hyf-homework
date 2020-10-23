@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS `mealSharing`;
+
 CREATE DATABASE `mealSharing`;
 USE `mealSharing`;
 
@@ -163,7 +165,7 @@ WHERE id = 6;
 DELETE FROM `mealSharing`.`review`
 WHERE id = 6;
 
---ADITIONAL QUERIES
+-- ADITIONAL QUERIES
 
 -- Get meals that has a price smaller than a specific price fx 90
 SELECT * FROM `mealSharing`.`meal`
@@ -173,11 +175,11 @@ WHERE `price` <= 35.00;
 SELECT *
 FROM `meal`
 JOIN (
-	SELECT meal_id, SUM(`number_of_guests`) AS `signed_guests`
+	SELECT `meal_id`, SUM(`number_of_guests`) AS `signed_guests`
 	FROM `reservation`
 	  JOIN `meal` ON `meal_id` = `meal`.`id`
-	GROUP BY meal_id
-) AS _ ON meal_id = meal.id
+	GROUP BY `meal_id`
+) AS `_` ON `meal_id` = `meal`.`id`
 WHERE `max_reservations` > `signed_guests`;
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
