@@ -1,12 +1,14 @@
 {
-  "name": "http-server",
+  "name": "mealsharing",
   "version": "1.0.0",
-  "description": "",
+  "description": "mealsharing app",
   "main": "src/backend/server.js",
   "scripts": {
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "start": "node src/backend/server.js",
+    "dev": "nodemon src/backend/server.js"
   },
-  "author": "",
+  "author": "Valentina",
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.2.2",
@@ -16,5 +18,8 @@
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "directories": {
+    "test": "test"
   }
 }
