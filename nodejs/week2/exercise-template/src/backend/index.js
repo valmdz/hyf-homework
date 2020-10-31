@@ -4,6 +4,9 @@ const express = require("express");
 const app = express();
 const moviesRouter = require("./movies-router");
 
+const aboutRouter = require("./about");
+app.use("/about", aboutRouter);
+
 // app.use binds middleware to your application. You can give app.use a path and router. The mini router will take care of all requests with the path
 app.use("/movies", moviesRouter);
 
