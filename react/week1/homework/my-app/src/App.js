@@ -1,7 +1,4 @@
 import React from "react";
-// import ReactDOM from "react-dom";
-// import { toDoItem } from "./toDoItem";
-// import * as ToDoItem from "./toDoItem";
 import { ToDoList } from "./toDoList";
 
 import "./App.css";
@@ -12,7 +9,4 @@ const toDos = [
   { description: "Eat breakfast", deadline: "Fri Sep 15 2017" },
 ];
 
-console.log({ toDos });
-
 export const App = () => <ToDoList foo={toDos}></ToDoList>;
-
