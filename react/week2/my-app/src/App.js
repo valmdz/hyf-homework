@@ -24,8 +24,8 @@ export const App = () => {
   const [todos, setTodos] = useState(intialTodos);
 
   const addToDo = () => {
-    const element = (nextId) => ({ description: "random todo", id: nextId });
-    return setTodos((prev) => [...prev, element(prev[prev.length - 1].id + 1)]);
+    const makeTodo = (nextId) => ({ description: "random todo", id: nextId, completed: false });
+    return setTodos((prev) => [...prev, makeTodo(prev[prev.length - 1].id + 1)]);
   };
 
   const remove = ({ id }) => {
@@ -37,7 +37,6 @@ export const App = () => {
       todos.map((element) => {
         if (element.id === todo.id) {
           return { ...element, completed: event.target.checked };
-          // return { id: element.id, description: element.description, completed: event.target.checked };
         }
         return element;
       })
