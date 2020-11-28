@@ -1,0 +1,22 @@
+* {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+body {
+  padding: 5em;
+}
+
+button {
+  border: solid lightgray 2px;
+  background-color: #D49713;
+  padding: .4em;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+p {
+  padding-top: 1em;
+  color: #D49713;
+}
