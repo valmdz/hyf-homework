@@ -25,12 +25,11 @@ export const App = () => {
 
   const addToDo = () => {
     const element = (nextId) => ({ description: "random todo", id: nextId });
-    console.log(element);
     return setTodos((prev) => [...prev, element(prev[prev.length - 1].id + 1)]);
   };
 
-  const remove = () => {
-    console.log("remove called");
+  const remove = ({ id }) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const check = ({ event, todo }) => {
