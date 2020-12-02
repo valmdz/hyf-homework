@@ -2,29 +2,44 @@ import React, { useState, useEffect } from "react";
 import { ToDoList } from "./toDoList";
 import { Count } from "./count";
 import "./App.css";
-const intialTodos = [
-  {
-    id: 1,
-    description: "Get out of bed",
-    completed: true,
-  },
-  {
-    id: 2,
-    description: "Brush teeth",
-    completed: false,
-  },
-  {
-    id: 3,
-    description: "Eat breakfast",
-    completed: false,
-  },
-];
+import { ToDoForm } from "./toDoForm";
+
+const API_URL =
+  "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
+
+const fetchTodos = async () => {
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  const baseToDos = data.map((todo) => ({ ...todo, completed: false }));
+  return baseToDos;
+};
+
 export const App = () => {
-  const [todos, setTodos] = useState(intialTodos);
-  const addToDo = () => {
-    const makeTodo = (nextId) => ({ description: "random todo", id: nextId, completed: false });
-    return setTodos((prev) => [...prev, makeTodo(prev[prev.length - 1].id + 1)]);
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    const fetchAndSet = async () => {
+      const todos = await fetchTodos();
+      setTodos(todos);
+    };
+    fetchAndSet();
+  }, []);
+
+  const addToDo = (e) => {
+    const newTodo = [...new FormData(e.target).entries()];
+    console.log(newTodo);
+    const makeTodo = (nextId) => ({
+      description: newTodo[0][1],
+      id: nextId,
+      deadline: newTodo[1][1],
+      completed: false,
+    });
+
+    return setTodos((prev) => [
+      ...prev,
+      makeTodo(prev[prev.length - 1].id + 1),
+    ]);
   };
+
   const remove = ({ id }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
@@ -38,11 +53,22 @@ export const App = () => {
       })
     );
   };
+
+  const onClickEdit = ({ id, description }) => {
+    console.log("in edit", id, description);
+  };
+
   return (
     <div>
+      <h1>Todos</h1>
       <Count></Count>
-      <button onClick={addToDo}>Add todo</button>
-      <ToDoList onCheck={check} onClick={remove} todos={todos}></ToDoList>
+      <ToDoForm onSubmit={addToDo}></ToDoForm>
+      <ToDoList
+        onCheck={check}
+        onClick={remove}
+        todos={todos}
+        onClickEdit={onClickEdit}
+      ></ToDoList>
     </div>
   );
 };

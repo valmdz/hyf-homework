@@ -8,7 +8,11 @@ export const ToDoItem = (props) => {
         defaultChecked={props.todo.completed}
       />
       <button onClick={() => props.onClick(props.todo)}>delete</button>
-      <span style={{ textDecoration }}>{props.todo.description}</span>
+      <button onClick={() => props.onClickEdit(props.todo)}>Edit</button>
+
+      <span style={{ textDecoration }}>
+        {props.todo.description} | {props.todo.deadline}
+      </span>
     </li>
   );
 };
