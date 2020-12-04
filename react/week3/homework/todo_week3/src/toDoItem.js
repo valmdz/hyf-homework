@@ -1,5 +1,9 @@
+import React, { useState } from "react";
+
 export const ToDoItem = (props) => {
   const textDecoration = props.todo.completed ? "line-through" : "";
+
+  const [isEditing, setEditing] = useState(false);
   return (
     <li>
       <input
@@ -8,11 +12,18 @@ export const ToDoItem = (props) => {
         defaultChecked={props.todo.completed}
       />
       <button onClick={() => props.onClick(props.todo)}>delete</button>
-      <button onClick={() => props.onClickEdit(props.todo)}>Edit</button>
-
-      <span style={{ textDecoration }}>
-        {props.todo.description} | {props.todo.deadline}
-      </span>
+      <button onClick={() => setEditing(true)}>Edit</button>
+      {isEditing ? (
+        <input
+          value={props.todo.description}
+          onChange={(event) => props.onChange({ event, todo: props.todo })}
+          onBlur={() => setEditing(false)}
+        ></input>
+      ) : (
+        <span style={{ textDecoration }}>
+          {props.todo.description} | {props.todo.deadline}
+        </span>
+      )}
     </li>
   );
 };

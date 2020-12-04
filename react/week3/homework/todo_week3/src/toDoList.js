@@ -4,16 +4,16 @@ import { Children } from "./Children";
 export const ToDoList = (props) => (
   <ul>
     {props.todos.map((todo) => (
-      <Children>
+      <div className="children-todo">
         <ToDoItem
           key={todo.id}
           todo={todo}
           onClick={props.onClick}
           onCheck={props.onCheck}
-          onClickEdit={props.onClickEdit}
           defaultChecked={props.completed}
+          onChange={props.onChange}
         ></ToDoItem>
-      </Children>
+      </div>
     ))}
   </ul>
 );
