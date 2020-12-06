@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.children-todo {
+  border: 2px solid black;
+  margin: 0.5em;
+  padding: 0.7em;
+  width: 25em;
+}
+
+.children-todo button {
+  margin: 0 0.5em 0 0.5em;
+}
