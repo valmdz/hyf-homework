@@ -3,11 +3,10 @@ import { Main } from "./main";
 
 import "./App.css";
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <h1>Github user searcher</h1>
-
       <Main></Main>
     </div>
   );

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "./form";
 import { UsersList } from "./usersList";
-// import { UserContext } from "./UserContext";
+
+export const RequestContext = React.createContext();
+export const AnswerContext = React.createContext();
 
 export const Main = () => {
   const [query, setQuery] = useState("");
@@ -24,7 +26,6 @@ export const Main = () => {
           return;
         }
         const data = await result.json();
-        console.log(data.items);
         setUsers(data);
       } catch {
       } finally {
@@ -35,11 +36,12 @@ export const Main = () => {
 
   return (
     <div className="App">
-      {/* <UserContext.Provider value={{ query, setQuery }}>
+      <RequestContext.Provider value={{ query, setQuery }}>
         <Form></Form>
-      </UserContext.Provider> */}
-      <Form setQuery={setQuery} query={query}></Form>
-      <UsersList users={users} loading={loading}></UsersList>
+      </RequestContext.Provider>
+      <AnswerContext.Provider value={{ users, loading }}>
+        <UsersList></UsersList>
+      </AnswerContext.Provider>
     </div>
   );
 };

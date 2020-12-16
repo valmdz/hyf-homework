@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { RequestContext } from "./main";
 
-export const Form = (props) => {
+export const Form = () => {
+  const cxt = useContext(RequestContext);
 
   const updateUser = (e) => {
-    props.setQuery(e.target.value);
+    cxt.setQuery(e.target.value);
   };
 
   return (
     <div>
-      <input type="text" value={props.query} onChange={updateUser}></input>
+      <input type="text" value={cxt.query} onChange={updateUser}></input>
     </div>
   );
 };
